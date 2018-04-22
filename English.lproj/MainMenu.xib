@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1010" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication">
+            <connections>
+                <outlet property="delegate" destination="199" id="200"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <menu title="MainMenu" systemMenu="main" id="29" userLabel="MainMenu">
+            <items>
+                <menuItem title="Alchemusica" id="56">
+                    <menu key="submenu" title="Alchemusica" systemMenu="apple" id="57">
+                        <items>
+                            <menuItem title="About Alchemusica..." id="58">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openAboutWindow:" target="-1" id="345"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Preferences..." id="129"/>
+                            <menuItem isSeparatorItem="YES" id="143">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Services" id="131">
+                                <menu key="submenu" title="Services" systemMenu="services" id="130"/>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="144">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Hide Alchemusica" keyEquivalent="h" id="134">
+                                <connections>
+                                    <action selector="hide:" target="-2" id="152"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Hide Others" id="145">
+                                <connections>
+                                    <action selector="hideOtherApplications:" target="-2" id="146"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show All" id="150">
+                                <connections>
+                                    <action selector="unhideAllApplications:" target="-2" id="153"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="149">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Quit Alchemusica" keyEquivalent="q" id="136">
+                                <connections>
+                                    <action selector="terminate:" target="-2" id="139"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="File" id="83">
+                    <menu key="submenu" title="File" id="81">
+                        <items>
+                            <menuItem title="New" keyEquivalent="n" id="82">
+                                <connections>
+                                    <action selector="newDocument:" target="-1" id="194"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open..." keyEquivalent="o" id="72">
+                                <connections>
+                                    <action selector="openDocument:" target="-1" id="195"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open Recent" id="124">
+                                <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="125">
+                                    <items>
+                                        <menuItem title="Clear Menu" id="126">
+                                            <connections>
+                                                <action selector="clearRecentDocuments:" target="-1" id="127"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="79">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Close" keyEquivalent="w" id="73">
+                                <connections>
+                                    <action selector="performClose:" target="-1" id="193"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save" keyEquivalent="s" id="75">
+                                <connections>
+                                    <action selector="saveDocument:" target="-1" id="196"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Save As..." keyEquivalent="S" id="80">
+                                <connections>
+                                    <action selector="saveDocumentAs:" target="-1" id="197"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Revert" id="112">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="revertDocumentToSaved:" target="-1" id="198"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="74">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Page Setup..." keyEquivalent="P" id="77">
+                                <connections>
+                                    <action selector="runPageLayout:" target="-1" id="87"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Print..." keyEquivalent="p" id="78">
+                                <connections>
+                                    <action selector="print:" target="-1" id="86"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Edit" id="163">
+                    <menu key="submenu" title="Edit" id="169">
+                        <items>
+                            <menuItem title="Undo" keyEquivalent="z" id="158">
+                                <connections>
+                                    <action selector="undo:" target="-1" id="180"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Redo" keyEquivalent="Z" id="173">
+                                <connections>
+                                    <action selector="redo:" target="-1" id="178"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="156">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Cut" keyEquivalent="x" id="160">
+                                <connections>
+                                    <action selector="cut:" target="-1" id="175"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Copy" keyEquivalent="c" id="157">
+                                <connections>
+                                    <action selector="copy:" target="-1" id="181"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Paste" id="351">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Paste" id="352">
+                                    <items>
+                                        <menuItem title="Paste (merge)" keyEquivalent="v" id="353">
+                                            <connections>
+                                                <action selector="paste:" target="-1" id="354"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Paste with replace" keyEquivalent="V" id="355">
+                                            <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                            <connections>
+                                                <action selector="pasteWithReplace:" target="-1" id="356"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Merge" keyEquivalent="m" id="225">
+                                <connections>
+                                    <action selector="merge:" target="-1" id="226"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Clear" id="164">
+                                <connections>
+                                    <action selector="delete:" target="-1" id="229"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="357"/>
+                            <menuItem title="Get Editing Range from Pasteboard" keyEquivalent="&lt;" id="358">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="getEditingRangeFromPasteboard:" target="-1" id="359"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Show Editing Range" keyEquivalent="R" id="IUs-Ew-IUI">
+                                <modifierMask key="keyEquivalentModifierMask" shift="YES" command="YES"/>
+                                <connections>
+                                    <action selector="showEditingRange:" target="-1" id="hHc-4t-ci6"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="242">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Select All" keyEquivalent="a" id="172">
+                                <connections>
+                                    <action selector="selectAll:" target="-1" id="179"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Track" id="230">
+                    <menu key="submenu" title="Track" id="231">
+                        <items>
+                            <menuItem title="Create New Track" tag="302" keyEquivalent="k" id="272">
+                                <connections>
+                                    <action selector="createNewTrack:" target="-1" id="275"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete Selected Tracks" tag="303" id="273">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+CA
+</string>
+                                <connections>
+                                    <action selector="deleteSelectedTracks:" target="-1" id="276"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="274">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Open Selected Tracks as Event List" tag="300" keyEquivalent="O" id="233">
+                                <connections>
+                                    <action selector="openEventListWindow:" target="-1" id="234"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Event" id="296">
+                    <menu key="submenu" title="Event" id="297">
+                        <items>
+                            <menuItem title="Insert New Event" keyEquivalent="i" id="299">
+                                <connections>
+                                    <action selector="insertNewEvent:" target="-1" id="301"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Edit Selected Event" id="300">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <connections>
+                                    <action selector="editSelectedEvent:" target="-1" id="302"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="306">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Change Control Number..." id="307"/>
+                            <menuItem title="Shift Selected Events..." keyEquivalent="," id="308"/>
+                            <menuItem title="Quantize..." id="346">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="quantizeSelectedEvents:" target="-1" id="347"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="331"/>
+                            <menuItem title="Insert Blank Time" keyEquivalent="i" id="332">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="insertBlankTime:" target="-1" id="336"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Delete Selected Time" keyEquivalent="x" id="333">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="deleteSelectedTime:" target="-1" id="337"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Scale Selected Time..." keyEquivalent="s" id="334">
+                                <modifierMask key="keyEquivalentModifierMask" option="YES" command="YES"/>
+                                <connections>
+                                    <action selector="scaleSelectedTime:" target="-1" id="338"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Play" id="277">
+                    <menu key="submenu" title="Play" id="278">
+                        <items>
+                            <menuItem title="Play" id="285">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performStartPlay:" target="-1" id="289"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Stop" id="280">
+                                <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="performStopPlay:" target="-1" id="290"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Pause" keyEquivalent="." id="281">
+                                <connections>
+                                    <action selector="performPausePlay:" target="-1" id="291"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="293">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Start MIDI Recording..." id="282">
+                                <connections>
+                                    <action selector="performStartMIDIRecording:" target="-1" id="292"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Start Audio Recording..." id="294">
+                                <connections>
+                                    <action selector="performStartAudioRecording:" target="-1" id="295"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="283">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Audio Device Settings..." id="310">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openAudioSettingsPanel:" target="199" id="311"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Metronome Settings..." id="343">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="openMetronomeSettingsPanel:" target="-1" id="344"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Remap MIDI Devices..." tag="304" id="284">
+                                <connections>
+                                    <action selector="remapDevice:" target="-1" id="287"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="286">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Update Audio/MIDI Info" id="348">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <connections>
+                                    <action selector="updateAudioAndMIDISettings:" target="-1" id="350"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="349"/>
+                            <menuItem title="Debug" tag="399" id="279">
+                                <connections>
+                                    <action selector="debugFunction:" target="-1" id="288"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Scripts" id="263">
+                    <menu key="submenu" title="Scripts" id="264">
+                        <items>
+                            <menuItem title="Execute Ruby Script..." id="267">
+                                <connections>
+                                    <action selector="executeRubyScriptFromFile:" target="199" id="270"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem title="Open Ruby Console" id="268">
+                                <connections>
+                                    <action selector="openRubyConsole:" target="199" id="271"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Window" id="19">
+                    <menu key="submenu" title="Window" systemMenu="window" id="24">
+                        <items>
+                            <menuItem title="Minimize" keyEquivalent="m" id="23">
+                                <connections>
+                                    <action selector="performMiniaturize:" target="-1" id="37"/>
+                                </connections>
+                            </menuItem>
+                            <menuItem isSeparatorItem="YES" id="92">
+                                <modifierMask key="keyEquivalentModifierMask" command="YES"/>
+                            </menuItem>
+                            <menuItem title="Bring All to Front" id="5">
+                                <connections>
+                                    <action selector="arrangeInFront:" target="-1" id="39"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+                <menuItem title="Help" id="103">
+                    <menu key="submenu" title="Help" id="106">
+                        <items>
+                            <menuItem title="Alchemusica Help" keyEquivalent="?" id="111">
+                                <connections>
+                                    <action selector="showHelp:" target="-1" id="122"/>
+                                </connections>
+                            </menuItem>
+                        </items>
+                    </menu>
+                </menuItem>
+            </items>
+        </menu>
+        <customObject id="199" userLabel="MyAppController" customClass="MyAppController">
+            <connections>
+                <outlet property="scriptMenu" destination="264" id="266"/>
+            </connections>
+        </customObject>
+    </objects>
+</document>
